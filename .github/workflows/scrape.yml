@@ -49,6 +49,9 @@ jobs:
       - name: Install dependencies
         run: pip install -e ".[scrape]"
 
+      - name: Install Playwright browsers
+        run: scrapling install
+
       - name: Scrape SCPI
         run: python -m scrapers.scpi
 

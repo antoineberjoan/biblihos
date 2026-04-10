@@ -306,19 +306,19 @@ BASE_URL = "https://francescpi.com/scpi-de-rendement"
 def scraper_scpi(slug: str) -> ScpiScrapee:
     """Scrape une SCPI depuis francescpi.com."""
     try:
-        from scrapling import Fetcher
+        from scrapling.fetchers import PlayWrightFetcher
     except ImportError:
-        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[fetcher]'", file=sys.stderr)
+        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[all]' && scrapling install", file=sys.stderr)
         sys.exit(1)
 
     url = f"{BASE_URL}/{slug}"
     scrape = ScpiScrapee(slug=slug, url=url)
 
     print(f"Scraping : {url}", file=sys.stderr)
-    fetcher = Fetcher(auto_match=True)
+    fetcher = PlayWrightFetcher(auto_match=True)
 
     try:
-        page = fetcher.get(url, timeout=15)
+        page = fetcher.fetch(url, timeout=30)
     except Exception as error:
         print(f"Erreur de connexion : {error}", file=sys.stderr)
         sys.exit(1)
@@ -438,13 +438,13 @@ def vers_yaml_biblihos(scrape: ScpiScrapee) -> dict:
 def lister_scpis() -> list[dict]:
     """Récupère la liste des slugs SCPI depuis la page de listing."""
     try:
-        from scrapling import Fetcher
+        from scrapling.fetchers import PlayWrightFetcher
     except ImportError:
-        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[fetcher]'", file=sys.stderr)
+        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[all]' && scrapling install", file=sys.stderr)
         sys.exit(1)
 
-    fetcher = Fetcher(auto_match=True)
-    page = fetcher.get("https://francescpi.com/scpi-de-rendement/", timeout=15)
+    fetcher = PlayWrightFetcher(auto_match=True)
+    page = fetcher.fetch("https://francescpi.com/scpi-de-rendement/", timeout=30)
 
     scpis = []
     for lien in page.css("a[href*='/scpi-de-rendement/']"):
