@@ -308,7 +308,7 @@ def scraper_scpi(slug: str) -> ScpiScrapee:
     try:
         from scrapling import Fetcher
     except ImportError:
-        print("Erreur : scrapling non installé. Lancer : pip install scrapling", file=sys.stderr)
+        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[fetcher]'", file=sys.stderr)
         sys.exit(1)
 
     url = f"{BASE_URL}/{slug}"
@@ -440,7 +440,7 @@ def lister_scpis() -> list[dict]:
     try:
         from scrapling import Fetcher
     except ImportError:
-        print("Erreur : scrapling non installé.", file=sys.stderr)
+        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[fetcher]'", file=sys.stderr)
         sys.exit(1)
 
     fetcher = Fetcher(auto_match=True)

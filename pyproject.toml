@@ -15,7 +15,7 @@ dev = [
     "jsonschema>=4.23",
 ]
 scrape = [
-    "scrapling>=0.2",
+    "scrapling[fetcher]>=0.4",
     "pyyaml>=6.0",
 ]
 
