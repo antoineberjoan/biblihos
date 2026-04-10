@@ -315,10 +315,11 @@ def scraper_scpi(slug: str) -> ScpiScrapee:
     scrape = ScpiScrapee(slug=slug, url=url)
 
     print(f"Scraping : {url}", file=sys.stderr)
-    fetcher = DynamicFetcher(auto_match=True)
+    fetcher = DynamicFetcher()
+    fetcher.configure(auto_match=True)
 
     try:
-        page = fetcher.fetch(url, timeout=30)
+        page = fetcher.fetch(url, timeout=30000)
     except Exception as error:
         print(f"Erreur de connexion : {error}", file=sys.stderr)
         sys.exit(1)
@@ -443,8 +444,9 @@ def lister_scpis() -> list[dict]:
         print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[all]'", file=sys.stderr)
         sys.exit(1)
 
-    fetcher = DynamicFetcher(auto_match=True)
-    page = fetcher.fetch("https://francescpi.com/scpi-de-rendement/", timeout=30)
+    fetcher = DynamicFetcher()
+    fetcher.configure(auto_match=True)
+    page = fetcher.fetch("https://francescpi.com/scpi-de-rendement/", timeout=30000)
 
     scpis = []
     for lien in page.css("a[href*='/scpi-de-rendement/']"):
