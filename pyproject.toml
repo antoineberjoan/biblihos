@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "biblihos"
 version = "0.1.0"
 description = "Données de référence pour Rheos — SCPI, retraite, barèmes fiscaux"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = []
 
 [project.optional-dependencies]
