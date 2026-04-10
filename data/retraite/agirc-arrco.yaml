@@ -1,0 +1,94 @@
+# Biblihos — Retraite : Agirc-Arrco (complémentaire salariés privé)
+# Source : agirc-arrco.fr, ANI 17/11/2017
+# Dernière mise à jour : 2026-04-10
+
+nom: Agirc-Arrco
+organisme: Agirc-Arrco
+type: complementaire                   # base | complementaire
+sourceUrl: https://www.agirc-arrco.fr/nous-connaitre/nos-etudes-et-publications/documentation-institutionnelle/parametres-et-donnees-statistiques/
+dateMiseAJour: "2026-04-10"
+
+# ── Taux de cotisation ────────────────────────────────────────────────
+# ANI 17/11/2017, en vigueur depuis 01/01/2019
+# tauxAppel : seuls 100/127 des cotisations génèrent des points
+tauxCotisation:
+  tranche1: 0.0620                     # jusqu'au PASS
+  tranche2: 0.1700                     # de 1× à 8× PASS
+  tauxAppel: 1.27                      # taux d'appel — 127 %
+  plafondTranche2: 8                   # multiple du PASS
+
+# ── Coefficient de solidarité (malus/bonus) ───────────────────────────
+# Suspendu depuis le 01/04/2023 pour les liquidations à compter du 01/01/2023
+# ANI 30/10/2015
+coefficientSolidarite:
+  actif: false                         # suspendu depuis 01/04/2023
+  malus: 0.10                          # -10 % pendant 3 ans si départ sans report
+  bonus1an: 0.10                       # +10 % permanent si report 1 an
+  bonus2ans: 0.20
+  bonus3ans: 0.30
+
+# ── Réversion ─────────────────────────────────────────────────────────
+# ANI 30/10/2015
+reversion:
+  taux: 0.60
+  ageMinimum: "—"                      # pas de condition d'âge
+  conditionRessources: false
+
+# ── Majoration enfants ────────────────────────────────────────────────
+majoration:
+  tauxEnfantsNes: 0.10                 # +10 % pour 3 enfants nés ou élevés
+  tauxEnfantCharge: 0.05               # +5 % par enfant encore à charge
+
+# ── Historique annuel ─────────────────────────────────────────────────
+# prixAchat : salaire de référence — coût d'un point en €
+# valeurService : valeur de service du point — revenu annuel par point en €
+# rendement : valeurService / prixAchat
+historique:
+  "2026":
+    prixAchat: 20.1877
+    valeurService: 1.4386
+    rendement: 0.07126
+  "2025":
+    prixAchat: 20.1877
+    valeurService: 1.4386
+    rendement: 0.07126
+  "2024":
+    prixAchat: 19.6321
+    valeurService: 1.4386
+    rendement: 0.07328
+  "2023":
+    prixAchat: 18.7669
+    valeurService: 1.4159
+    rendement: 0.07544
+  "2022":
+    prixAchat: 17.4316
+    valeurService: 1.3498
+    rendement: 0.07744
+  "2021":
+    prixAchat: 17.3982
+    valeurService: 1.2841
+    rendement: 0.07381
+  "2020":
+    prixAchat: 17.3982
+    valeurService: 1.2714
+    rendement: 0.07308
+  "2019":
+    prixAchat: 17.0571
+    valeurService: 1.2588
+    rendement: 0.07381
+  "2018":
+    prixAchat: 16.4182
+    valeurService: 1.2513
+    rendement: 0.07622
+  "2017":
+    prixAchat: 15.9660
+    valeurService: 1.2328
+    rendement: 0.07721
+  "2016":
+    prixAchat: 15.6534
+    valeurService: 1.2308
+    rendement: 0.07864
+  "2015":
+    prixAchat: 15.2714
+    valeurService: 1.2300
+    rendement: 0.08057

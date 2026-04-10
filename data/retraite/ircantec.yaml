@@ -1,0 +1,59 @@
+# Biblihos — Retraite : IRCANTEC (complémentaire agents non titulaires de l'État)
+# Source : ircantec.retraites.fr
+# Dernière mise à jour : 2026-04-10
+
+nom: IRCANTEC
+organisme: IRCANTEC
+type: complementaire                   # base | complementaire
+sourceUrl: https://www.ircantec.retraites.fr
+dateMiseAJour: "2026-04-10"
+
+# ── Taux de cotisation ────────────────────────────────────────────────
+# Tranche 1 : jusqu'au PASS / Tranche 2 : au-delà (jusqu'à 8× PASS)
+tauxCotisation:
+  tranche1:
+    partSalarie: 0.0296
+    partEmployeur: 0.0444
+  tranche2:
+    partSalarie: 0.0696
+    partEmployeur: 0.1258
+
+# ── Versement en capital ──────────────────────────────────────────────
+# En dessous de 300 points acquis, la retraite est versée en capital
+seuilAnnuite: 300
+
+# ── Réversion ─────────────────────────────────────────────────────────
+reversion:
+  taux: 0.50
+  ageMinimum: 50
+
+# ── Historique annuel ─────────────────────────────────────────────────
+historique:
+  "2026":
+    valeurService: 0.51681
+    prixAchat: 3.07
+    rendement: 0.16835
+  "2025":
+    valeurService: 0.51681
+    prixAchat: 3.07
+    rendement: 0.16835
+  "2024":
+    valeurService: 0.51681
+    prixAchat: 2.95
+    rendement: 0.17520
+  "2023":
+    valeurService: 0.50684
+    prixAchat: 2.81
+    rendement: 0.18037
+  "2022":
+    valeurService: 0.46980
+    prixAchat: 2.68
+    rendement: 0.17530
+  "2021":
+    valeurService: 0.46044
+    prixAchat: 2.68
+    rendement: 0.17181
+  "2020":
+    valeurService: 0.46044
+    prixAchat: 2.68
+    rendement: 0.17181

@@ -1,0 +1,123 @@
+# Biblihos — SCPI : CORUM XL
+# Société de gestion : CORUM AM
+# Source : corum.fr
+# Dernière mise à jour : 2026-04-10
+
+# ── Identité ──────────────────────────────────────────────────────────
+nom: CORUM XL
+societeGestion: CORUM AM
+type: SCPI
+isin: "—"
+dateCreation: "2017-04-01"
+creation: 2017
+capitalisation: "—"
+capitalVariable: true
+strategie: Diversifiée
+risque: 4
+sfdr: Article 8
+isr: false
+labelIsr: "—"
+versement: Mensuel
+versementProgramme: false
+delaiJouissance: "5 mois"
+url: https://www.corum.fr/corum-xl
+
+# ── Frais ─────────────────────────────────────────────────────────────
+fraisSouscription: 0.12
+fraisGestion: 0.132
+fraisAcquisition: "—"
+fraisRevente: "—"
+fraisTravaux: "—"
+
+# ── Prix & Valorisation ───────────────────────────────────────────────
+prixSouscription: 195.0
+prixRetrait: 171.6
+valeurReconstitution: "—"
+minimumSouscription: 1
+pga: "—"
+
+# ── Performance ───────────────────────────────────────────────────────
+td:
+  "2025": "—"
+  "2024": 0.0553
+  "2023": 0.0553
+  "2022": 0.054
+  "2021": 0.0516
+  "2020": 0.0506
+
+# ── Patrimoine ────────────────────────────────────────────────────────
+tof: "—"
+top: "—"
+nombreActifs: "—"
+nombreLocataires: "—"
+walb: "—"
+endettement: "—"
+associes: "—"
+
+# ── Répartition géographique (% valeur vénale) ────────────────────────
+repartitionGeographique:
+  grandeBretagne: 0.30
+  pologne: 0.10
+  canada: 0.08
+  norvege: 0.06
+  autres: 0.46
+
+# ── Répartition sectorielle (% valeur vénale) ─────────────────────────
+repartitionSectorielle:
+  bureaux: 0.30
+  commerces: 0.20
+  logistique: 0.15
+  hotels: 0.10
+  autre: 0.25
+
+# ── Liquidité ─────────────────────────────────────────────────────────
+liquidite: Illiquide
+souscriptions: "—"
+retraits: "—"
+ran: "—"
+
+# ── Démembrement — nue-propriété par durée (années) ───────────────────
+demembrement:
+  "3": "—"
+  "4": "—"
+  "5": 0.80
+  "6": "—"
+  "7": "—"
+  "8": "—"
+  "9": "—"
+  "10": 0.68
+  "15": 0.59
+  "20": 0.52
+
+# ── Historique annuel ─────────────────────────────────────────────────
+historique:
+  "2024":
+    prixSouscription: 195.0
+    td: 0.0553
+  "2023":
+    prixSouscription: 195.0
+    td: 0.0553
+  "2022":
+    prixSouscription: 195.0
+    td: 0.054
+  "2021":
+    prixSouscription: 185.0
+    td: 0.0516
+  "2020":
+    prixSouscription: 185.0
+    td: 0.0506
+
+# ── Documents officiels ───────────────────────────────────────────────
+documents:
+  dic:
+    url: "—"
+    date: "—"
+  rapportAnnuel:
+    url: "—"
+    date: "—"
+  bulletinTrimestriel:
+    url: "—"
+    date: "—"
+  noteInformations:
+    url: "—"
+    date: "—"

@@ -1,0 +1,120 @@
+# Biblihos — Schéma de validation Retraite
+# Format : JSON Schema Draft 2020-12 en syntaxe YAML
+# Valide chaque fichier data/retraite/*.yaml
+
+$schema: https://json-schema.org/draft/2020-12/schema
+title: RegimeRetraite
+description: Paramètres d'un régime de retraite (base ou complémentaire)
+type: object
+required:
+  - nom
+  - organisme
+  - type
+  - sourceUrl
+  - dateMiseAJour
+additionalProperties: true            # chaque régime a des champs spécifiques en plus
+
+properties:
+  nom:
+    type: string
+  organisme:
+    type: string
+  type:
+    enum: [base, complementaire]
+  sourceUrl:
+    type: string
+  dateMiseAJour:
+    type: string
+    pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+
+# ── Contraintes spécifiques par type ─────────────────────────────────
+allOf:
+  # Régime de base : champs obligatoires supplémentaires
+  - if:
+      properties:
+        type:
+          const: base
+    then:
+      required:
+        - pass
+        - tauxPlein
+        - nombreAnneesSam
+        - decoteParTrimestre
+        - surcoteParTrimestre
+        - generations
+      properties:
+        pass:
+          type: object
+          description: PASS par année (clés = année en string)
+          additionalProperties:
+            type: number
+            minimum: 0
+        tauxPlein:
+          type: number
+          minimum: 0
+          maximum: 1
+        nombreAnneesSam:
+          type: integer
+          minimum: 1
+        decoteParTrimestre:
+          type: number
+          minimum: 0
+        surcoteParTrimestre:
+          type: number
+          minimum: 0
+        nombreMaxTrimestreDecote:
+          type: integer
+        generations:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required:
+              - naissance
+              - ageLegalMois
+              - ageAnnulationDecoteMois
+              - trimestresRequis
+            additionalProperties: false
+            properties:
+              naissance:
+                type: string
+              ageLegalMois:
+                type: integer
+                minimum: 600          # 50 ans minimum
+                maximum: 960          # 80 ans maximum
+              ageAnnulationDecoteMois:
+                type: integer
+              trimestresRequis:
+                type: integer
+                minimum: 1
+
+  # Régime complémentaire : champs obligatoires supplémentaires
+  - if:
+      properties:
+        type:
+          const: complementaire
+    then:
+      required:
+        - tauxCotisation
+        - historique
+      properties:
+        historique:
+          type: object
+          description: Historique annuel (clés = année en string)
+          additionalProperties:
+            type: object
+            required:
+              - valeurService
+              - prixAchat
+              - rendement
+            additionalProperties: false
+            properties:
+              valeurService:
+                type: number
+                minimum: 0
+              prixAchat:
+                type: number
+                minimum: 0
+              rendement:
+                type: number
+                minimum: 0

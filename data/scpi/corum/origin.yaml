@@ -1,0 +1,142 @@
+# Biblihos — SCPI : CORUM Origin
+# Société de gestion : CORUM AM
+# Source : corum.fr, DIC, rapports annuels et trimestriels
+# Dernière mise à jour : 2026-04-10
+
+# ── Identité ──────────────────────────────────────────────────────────
+nom: CORUM Origin
+societeGestion: CORUM AM
+type: SCPI                         # SCPI | SCI
+isin: "—"                          # pas d'ISIN pour les SCPI non cotées
+dateCreation: "2012-01-01"
+creation: 2012                     # année seule
+capitalisation: "3,79 milliards €"
+capitalVariable: true              # capital variable (ouvert) ou fixe
+strategie: Diversifiée             # Diversifiée | Bureaux | Commerces | Résidentiel | Santé | Logistique | Hôtels
+risque: 3                          # SRI 1-7
+sfdr: Article 8                    # Article 6 | Article 8 | Article 9
+isr: false
+labelIsr: "—"                      # ISR | Greenfin | aucun
+versement: Mensuel                 # fréquence de distribution
+versementProgramme: false
+delaiJouissance: "5 mois"
+url: https://www.corum.fr/corum-origin
+
+# ── Frais ─────────────────────────────────────────────────────────────
+fraisSouscription: 0.1196          # 11,96 %
+fraisGestion: 0.132                # 13,2 % HT sur les loyers
+fraisAcquisition: "—"              # frais sur acquisitions immobilières
+fraisRevente: "—"                  # frais de cession marché secondaire
+fraisTravaux: "—"                  # frais sur travaux / capex
+
+# ── Prix & Valorisation ───────────────────────────────────────────────
+prixSouscription: 1135.0
+prixRetrait: 1021.5
+valeurReconstitution: 1131.42
+minimumSouscription: 1             # nombre minimum de parts
+pga: "—"                           # prime de gestion d'actifs
+
+# ── Performance ───────────────────────────────────────────────────────
+# Taux de distribution = dividende / prix de part au 01/01, en décimales
+td:
+  "2025": "—"
+  "2024": 0.0631
+  "2023": 0.0606
+  "2022": 0.067
+  "2021": 0.0712
+  "2020": 0.06
+  "2019": 0.0627
+  "2018": 0.062
+
+# ── Patrimoine ────────────────────────────────────────────────────────
+tof: 0.964                         # taux d'occupation financier
+top: "—"                           # taux d'occupation physique
+nombreActifs: 162
+nombreLocataires: "—"
+walb: 7.6                          # durée résiduelle moyenne des baux (années)
+endettement: 0.214                 # ratio LTV
+associes: "—"                      # nombre de porteurs de parts
+
+# ── Répartition géographique (% valeur vénale) ────────────────────────
+repartitionGeographique:
+  paysBas: 0.28
+  finlande: 0.07
+  belgique: 0.07
+  allemagne: 0.07
+  espagne: 0.06
+  portugal: 0.06
+  italie: 0.05
+  irlande: 0.05
+  lettonie: 0.05
+  lituanie: 0.04
+  autres: 0.20
+
+# ── Répartition sectorielle (% valeur vénale) ─────────────────────────
+repartitionSectorielle:
+  bureaux: 0.33
+  commerces: 0.29
+  logistique: 0.14
+  sante: 0.07
+  hotels: 0.07
+  education: 0.05
+  autre: 0.05
+
+# ── Liquidité ─────────────────────────────────────────────────────────
+liquidite: Illiquide               # Illiquide | Secondaire | Bourse
+souscriptions: "—"                 # collecte nette (parts ou euros)
+retraits: "—"                      # demandes de retrait en attente (parts)
+ran: "—"                           # report à nouveau (jours de distribution)
+
+# ── Démembrement — nue-propriété par durée (années) ───────────────────
+# Exemple : "10": 0.67 → NP 67 %, US 33 %
+demembrement:
+  "3": "—"
+  "4": "—"
+  "5": 0.79
+  "6": 0.765
+  "7": 0.74
+  "8": 0.715
+  "9": 0.69
+  "10": 0.67
+  "15": 0.595
+  "20": 0.53
+
+# ── Historique annuel ─────────────────────────────────────────────────
+# Champs : prixSouscription (€), td (décimale)
+historique:
+  "2024":
+    prixSouscription: 1135.0
+    td: 0.0631
+  "2023":
+    prixSouscription: 1135.0
+    td: 0.0606
+  "2022":
+    prixSouscription: 1135.0
+    td: 0.067
+  "2021":
+    prixSouscription: 1135.0
+    td: 0.0712
+  "2020":
+    prixSouscription: 1135.0
+    td: 0.06
+  "2019":
+    prixSouscription: 1075.0
+    td: 0.0627
+  "2018":
+    prixSouscription: 1025.0
+    td: 0.062
+
+# ── Documents officiels ───────────────────────────────────────────────
+documents:
+  dic:
+    url: "https://www.corum.fr/sites/default/files/documents/dic-corum-origin.pdf"
+    date: "2025-07-01"
+  rapportAnnuel:
+    url: "https://www.corum.fr/sites/default/files/documents/ra-corum-origin-2024.pdf"
+    date: "2025-04-15"
+  bulletinTrimestriel:
+    url: "https://www.corum.fr/sites/default/files/documents/bt-corum-origin-t4-2025.pdf"
+    date: "2026-02-15"
+  noteInformations:
+    url: "—"
+    date: "—"

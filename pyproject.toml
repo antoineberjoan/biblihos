@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "biblihos"
+version = "0.1.0"
+description = "Données de référence pour Rheos — SCPI, retraite, barèmes fiscaux"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pyyaml>=6.0",
+    "jsonschema>=4.23",
+]
+scrape = [
+    "scrapling>=0.2",
+    "pyyaml>=6.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["scrapers"]

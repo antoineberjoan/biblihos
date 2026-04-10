@@ -1,0 +1,167 @@
+# Biblihos — Retraite : CNAV (régime général de base)
+# Source : service-public.gouv.fr, circulaires CNAV, Code de la Sécurité sociale
+# Dernière mise à jour : 2026-04-10
+
+nom: Régime général de base
+organisme: CNAV
+type: base                             # base | complementaire
+sourceUrl: https://www.service-public.gouv.fr/particuliers/vosdroits/F35063
+dateMiseAJour: "2026-04-10"
+
+# ── PASS — Plafond Annuel de la Sécurité Sociale ─────────────────────
+# Source : arrêté annuel
+pass:
+  "2026": 48060
+  "2025": 47100
+  "2024": 46368
+  "2023": 43992
+  "2022": 41136
+  "2021": 41136
+  "2020": 41136
+  "2019": 40524
+  "2018": 39732
+  "2017": 39228
+  "2016": 38616
+  "2015": 38040
+  "2014": 37548
+  "2013": 37032
+  "2012": 36372
+  "2011": 35352
+  "2010": 34620
+
+# ── Taux de liquidation ───────────────────────────────────────────────
+tauxPlein: 0.50                        # Art. L351-1 CSS — 50 % du SAM
+nombreAnneesSam: 25                    # meilleures années retenues pour le SAM
+
+# ── Décote / Surcote ──────────────────────────────────────────────────
+# Art. L351-1-1 CSS (décote), Art. L351-1-2 CSS (surcote)
+decoteParTrimestre: 0.00625            # 0,625 % par trimestre manquant
+surcoteParTrimestre: 0.0125            # 1,25 % par trimestre au-delà du taux plein
+nombreMaxTrimestreDecote: 20           # plafonnement de la décote
+
+# ── MICO — Minimum contributif ───────────────────────────────────────
+# Art. L351-10 CSS
+micoBaseAnnuel: 9075.36
+micoMajoreAnnuel: 10848.0              # ≥ 120 trimestres cotisés
+
+# ── Majoration enfants ────────────────────────────────────────────────
+# Art. L351-12 CSS
+majoration3Enfants: 0.10               # +10 % pour 3 enfants élevés
+
+# ── Réversion ─────────────────────────────────────────────────────────
+# Art. L353-1, D353-1 CSS
+reversion:
+  taux: 0.54
+  ageMinimum: 55
+  plafondRessourcesSeul: 25001.60
+  plafondRessourcesCouple: 40002.56
+  minimumAnnuel: 4019.13
+  trimestresMinimum: 60                # pour bénéficier du minimum
+
+# ── Durée de cotisation par génération ───────────────────────────────
+# Art. L161-17-2 et L161-17-3 CSS (réforme 2023)
+# ageLegalMois : âge légal de départ en mois
+# ageAnnulationDecoteMois : âge de départ automatiquement au taux plein
+# trimestresRequis : nombre de trimestres validés pour le taux plein
+generations:
+  - naissance: "avant 1961-09"
+    ageLegalMois: 744                  # 62 ans
+    ageAnnulationDecoteMois: 804       # 67 ans
+    trimestresRequis: 168
+
+  - naissance: "1961-09 à 1961-12"
+    ageLegalMois: 747                  # 62 ans 3 mois
+    ageAnnulationDecoteMois: 804
+    trimestresRequis: 169
+
+  - naissance: "1962-01 à 1962-12"
+    ageLegalMois: 750                  # 62 ans 6 mois
+    ageAnnulationDecoteMois: 804
+    trimestresRequis: 169
+
+  - naissance: "1963-01 à 1965-03"
+    ageLegalMois: 753                  # 62 ans 9 mois
+    ageAnnulationDecoteMois: 804
+    trimestresRequis: 170
+
+  - naissance: "1965-04 à 1965-12"
+    ageLegalMois: 756                  # 63 ans
+    ageAnnulationDecoteMois: 804
+    trimestresRequis: 171
+
+  - naissance: "1966-01 à 1966-12"
+    ageLegalMois: 759                  # 63 ans 3 mois
+    ageAnnulationDecoteMois: 804
+    trimestresRequis: 172
+
+  - naissance: "1967-01 à 1967-12"
+    ageLegalMois: 762                  # 63 ans 6 mois
+    ageAnnulationDecoteMois: 804
+    trimestresRequis: 172
+
+  - naissance: "1968-01 à 1968-12"
+    ageLegalMois: 765                  # 63 ans 9 mois
+    ageAnnulationDecoteMois: 804
+    trimestresRequis: 172
+
+  - naissance: "1969-01 et après"
+    ageLegalMois: 768                  # 64 ans
+    ageAnnulationDecoteMois: 804
+    trimestresRequis: 172
+
+# ── Coefficients de revalorisation du SAM ────────────────────────────
+# Permettent de ramener les salaires passés en euros d'aujourd'hui
+# Source : Circulaire CNAV annuelle
+revalorisationSam:
+  "2026": 1.000
+  "2025": 1.009
+  "2024": 1.031
+  "2023": 1.086
+  "2022": 1.137
+  "2021": 1.149
+  "2020": 1.153
+  "2019": 1.164
+  "2018": 1.182
+  "2017": 1.191
+  "2016": 1.191
+  "2015": 1.192
+  "2014": 1.192
+  "2013": 1.206
+  "2012": 1.232
+  "2011": 1.256
+  "2010": 1.267
+
+# ── Prélèvements sociaux sur pensions ────────────────────────────────
+# Art. L136-8 CSS (CSG), Ordonnance 96-50 (CRDS), Art. L14-10-4 CASF (CASA)
+prelevementsSociaux:
+  csg:
+    tauxNormal: 0.083
+    tauxMedian: 0.066
+    tauxReduit: 0.038
+    tauxExonere: 0.0
+  crds: 0.005
+  casa: 0.003                          # contribution additionnelle solidarité autonomie
+
+# ── Seuils RFR pour taux CSG (revenus 2024, avis 2025) ──────────────
+# Le taux CSG dépend du Revenu Fiscal de Référence et du nombre de parts
+seuilsRfr:
+  - partsFiscales: 1.0
+    exonere: 13048
+    reduit: 17057
+    median: 26472
+  - partsFiscales: 1.5
+    exonere: 16532
+    reduit: 21612
+    median: 33538
+  - partsFiscales: 2.0
+    exonere: 20016
+    reduit: 26167
+    median: 40604
+  - partsFiscales: 2.5
+    exonere: 23500
+    reduit: 30722
+    median: 47670
+  - partsFiscales: 3.0
+    exonere: 26984
+    reduit: 35277
+    median: 54736
