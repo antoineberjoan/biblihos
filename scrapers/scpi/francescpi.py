@@ -306,16 +306,16 @@ BASE_URL = "https://francescpi.com/scpi-de-rendement"
 def scraper_scpi(slug: str) -> ScpiScrapee:
     """Scrape une SCPI depuis francescpi.com."""
     try:
-        from scrapling.fetchers import PlayWrightFetcher
+        from scrapling import DynamicFetcher
     except ImportError:
-        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[all]' && scrapling install", file=sys.stderr)
+        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[all]'", file=sys.stderr)
         sys.exit(1)
 
     url = f"{BASE_URL}/{slug}"
     scrape = ScpiScrapee(slug=slug, url=url)
 
     print(f"Scraping : {url}", file=sys.stderr)
-    fetcher = PlayWrightFetcher(auto_match=True)
+    fetcher = DynamicFetcher(auto_match=True)
 
     try:
         page = fetcher.fetch(url, timeout=30)
@@ -438,12 +438,12 @@ def vers_yaml_biblihos(scrape: ScpiScrapee) -> dict:
 def lister_scpis() -> list[dict]:
     """Récupère la liste des slugs SCPI depuis la page de listing."""
     try:
-        from scrapling.fetchers import PlayWrightFetcher
+        from scrapling import DynamicFetcher
     except ImportError:
-        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[all]' && scrapling install", file=sys.stderr)
+        print("Erreur : scrapling non installé. Lancer : pip install 'scrapling[all]'", file=sys.stderr)
         sys.exit(1)
 
-    fetcher = PlayWrightFetcher(auto_match=True)
+    fetcher = DynamicFetcher(auto_match=True)
     page = fetcher.fetch("https://francescpi.com/scpi-de-rendement/", timeout=30)
 
     scpis = []
