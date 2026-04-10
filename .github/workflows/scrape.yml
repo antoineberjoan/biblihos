@@ -28,11 +28,17 @@ jobs:
       - name: Install dependencies
         run: pip install -e ".[dev]"
 
-      - name: Validate SCPI
-        run: python scripts/validate.py schemas/scpi.yaml data/scpi/
+      - name: Validate Retraite — salariés privé
+        run: python scripts/validate.py schemas/retraite.yaml data/retraite/salarie-prive/
 
-      - name: Validate Retraite
-        run: python scripts/validate.py schemas/retraite.yaml data/retraite/
+      - name: Validate Retraite — fonctionnaires
+        run: python scripts/validate.py schemas/retraite_fonctionnaire.yaml data/retraite/fonctionnaire/
+
+      - name: Validate Retraite — libéraux
+        run: python scripts/validate.py schemas/retraite_liberal.yaml data/retraite/liberal/
+
+      - name: Validate Retraite — autres régimes
+        run: python scripts/validate.py schemas/retraite_fonctionnaire.yaml data/retraite/autre/
 
   scrape:
     name: Scrape fresh data
@@ -51,9 +57,6 @@ jobs:
 
       - name: Install Playwright browsers
         run: scrapling install
-
-      - name: Scrape SCPI
-        run: python -m scrapers.scpi
 
       - name: Scrape Retraite
         run: python -m scrapers.retraite

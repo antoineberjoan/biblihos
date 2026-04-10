@@ -1,0 +1,52 @@
+nom: CRPCEN
+organisme: Caisse de Retraite et de Prévoyance des Clercs et Employés de Notaires
+profession: clerc-notaire
+sourceUrl: https://www.crpcen.fr/etudes/taux-et-indices-de-references
+dateMiseAJour: "2026-04-10"
+pass: 48060  # PASS 2026
+
+# La CRPCEN est un régime spécial salarié (pas libéral)
+# Taux de cotisation sur salaire brut
+cotisations:
+  annee: 2025
+  # Part salariale
+  retraite_salariale: 0.1343
+  # Part patronale
+  retraite_patronale: 0.2915
+  contribution_solidarite_patronale: 0.003
+  # Émoluments/honoraires (prélevés par CRPCEN)
+  emoluments: 0.04
+
+# Valeur du point notarial
+valeurPointNotarial:
+  "2025-10-01": 15.84  # pour 35h hebdomadaires
+
+# Seuils CSG/CRDS/CASA sur pensions (retraités) — RFR 2023 — Métropole
+# Taux d'imposition selon revenu fiscal de référence (RFR) et nombre de parts
+prelevementsSociaux:
+  annee: 2025
+  seuils_metropole:
+    exoneration:
+      "1": 12817
+      "1.5": 16239
+      "2": 19661
+      "2.5": 23083
+      par_demi_part_supplementaire: 3422
+    csg_taux_reduit:  # 3,8%
+      taux: 0.038
+      "1": {min: 12817, max: 16754}
+      "1.5": {min: 16239, max: 21228}
+      "2": {min: 19661, max: 25702}
+    csg_taux_moyen:  # 6,6%
+      taux: 0.066
+      "1": {min: 16755, max: 26002}
+    csg_taux_normal:  # 8,3%
+      taux: 0.083
+      seuil: 26002  # au-delà pour 1 part
+    crds: 0.005
+    casa: 0.003
+
+rid:
+  annee: 2025
+  cotisation: 1324   # prévoyance forfait annuel
+  valeurPoint: "—"

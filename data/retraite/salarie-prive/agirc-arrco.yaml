@@ -17,16 +17,6 @@ tauxCotisation:
   tauxAppel: 1.27                      # taux d'appel — 127 %
   plafondTranche2: 8                   # multiple du PASS
 
-# ── Coefficient de solidarité (malus/bonus) ───────────────────────────
-# Suspendu depuis le 01/04/2023 pour les liquidations à compter du 01/01/2023
-# ANI 30/10/2015
-coefficientSolidarite:
-  actif: false                         # suspendu depuis 01/04/2023
-  malus: 0.10                          # -10 % pendant 3 ans si départ sans report
-  bonus1an: 0.10                       # +10 % permanent si report 1 an
-  bonus2ans: 0.20
-  bonus3ans: 0.30
-
 # ── Réversion ─────────────────────────────────────────────────────────
 # ANI 30/10/2015
 reversion:

@@ -1,0 +1,81 @@
+nom: CNBF
+organisme: Caisse Nationale des Barreaux Français
+profession: avocat
+sourceUrl: https://www.cnbf.fr/consultez-les-baremes-mis-a-jour-pour-lannee-2025/
+dateMiseAJour: "2026-04-10"
+pass: 47100  # PASS 2025
+
+# Le RBL des avocats est spécifique : cotisation forfaitaire (pas de taux)
+rbl:
+  annee: 2025
+  type: forfait_progressif
+  t1:
+    taux: 0.032
+    assiette_min: 8949   # 19% PASS
+    assiette_max: "—"    # déplafonné
+    points_max: "—"
+  t2:
+    taux: "—"
+    assiette_max: "—"
+    points_max: "—"
+  # Cotisations forfaitaires par ancienneté
+  forfaits_anciennete:
+    "1": 351
+    "2": 705
+    "3": 1106
+    "4": 1505
+    "5": 1505
+    "6+": 1921  # ou 65 ans et plus
+  minimum: 573
+  valeurPoint: 0.6540
+  # Retraite base : forfaitaire + proportionnelle
+  retraite_base_annuelle_pleine: 18964
+  retraite_proportionnelle_annuelle: 2355
+  revalorisation: 0.016  # +1,6% au 01/01/2025
+
+# RC = Régime Complémentaire par tranches de revenus avec taux progressifs
+# 3 classes : C1 (standard), C2, C2+ (optionnel)
+rc:
+  annee: 2025
+  type: tranches_taux
+  prixAchatPoint: 12.0529
+  valeurPoint: 1.0111   # revalorisation +2% au 01/01/2025
+  # Taux par classe et par tranche de revenus (avocats non salariés)
+  classes:
+    C1:
+      seuil_max: "—"      # CNBF : pas de seuil unique, voir tranches ci-dessous
+      cotisation: "—"     # cotisation variable selon tranche de revenus
+      tranches:
+        - {seuil_max: 42507,  taux: 0.070}
+        - {seuil_max: 85014,  taux: 0.102}
+        - {seuil_max: 127521, taux: 0.117}
+        - {seuil_max: 170028, taux: 0.134}
+        - {seuil_max: 212535, taux: 0.151}
+    C2:
+      seuil_max: "—"
+      cotisation: "—"
+      tranches:
+        - {seuil_max: 42507,  taux: 0.070}
+        - {seuil_max: 85014,  taux: 0.116}
+        - {seuil_max: 127521, taux: 0.137}
+        - {seuil_max: 170028, taux: 0.158}
+        - {seuil_max: 212535, taux: 0.179}
+    C2_plus:
+      seuil_max: "—"
+      cotisation: "—"
+      tranches:
+        - {seuil_max: 42507,  taux: 0.070}
+        - {seuil_max: 85014,  taux: 0.116}
+        - {seuil_max: 127521, taux: 0.137}
+        - {seuil_max: 170028, taux: 0.158}
+        - {seuil_max: 212535, taux: 0.204}
+  # Provisionnels début activité (assiette forfaitaire 19% PASS = 8 949 €)
+  cotisation_debut: 465
+
+rid:
+  annee: 2025
+  cotisation: 229    # 68€ avocat + 161€ Barreau (années 1-4)
+  cotisation_senior: 331  # à partir 5ème année ou 65 ans+
+  valeurPoint: "—"
+  indemnite_journaliere: 90
+  capital_deces: 50000

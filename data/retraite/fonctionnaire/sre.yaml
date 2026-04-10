@@ -1,0 +1,54 @@
+nom: SRE
+organisme: Service des Retraites de l'État
+profession: fonctionnaire-etat
+sourceUrl: https://www.fonction-publique.gouv.fr/retraite
+dateMiseAJour: "2026-04-10"
+
+# Régime en annuités (pas en points)
+# Formule : traitement × taux_liquidation × (duree_fpe / duree_reference)
+type: annuites
+taux_maximum: 0.75
+duree_reference: 172  # trimestres (générations 1973+)
+
+cotisations:
+  annee: 2025
+  salarie: 0.111    # 11,10% du traitement brut indiciaire
+  patronal: "—"     # État = propre assureur, contribution non plafonnée
+
+decote:
+  par_trimestre: 0.0125   # -1,25% par trimestre manquant
+  max_trimestres: 20
+  max_taux: 0.25          # -25% maximum
+
+surcote:
+  par_trimestre: 0.0125   # +1,25% par trimestre supplémentaire
+
+minimum_garanti: 1366.35  # €/mois brut (service complet) — 2025
+
+generations:
+  - naissance: "1959-1960"
+    categorie_sedentaire: {age_legal_mois: 744, trimestres_requis: 167}
+    categorie_active:     {age_legal_mois: 684, trimestres_requis: 167}
+  - naissance: "1961"
+    categorie_sedentaire: {age_legal_mois: 744, trimestres_requis: 168}
+    categorie_active:     {age_legal_mois: 684, trimestres_requis: 168}
+  - naissance: "1962"
+    categorie_sedentaire: {age_legal_mois: 744, trimestres_requis: 169}
+    categorie_active:     {age_legal_mois: 684, trimestres_requis: 169}
+  - naissance: "1963"
+    categorie_sedentaire: {age_legal_mois: 756, trimestres_requis: 170}
+    categorie_active:     {age_legal_mois: 696, trimestres_requis: 170}
+  - naissance: "1964"
+    categorie_sedentaire: {age_legal_mois: 756, trimestres_requis: 171}
+    categorie_active:     {age_legal_mois: 696, trimestres_requis: 171}
+  - naissance: "1965"
+    categorie_sedentaire: {age_legal_mois: 756, trimestres_requis: 171}
+    categorie_active:     {age_legal_mois: 696, trimestres_requis: 171}
+  - naissance: "1966+"
+    categorie_sedentaire: {age_legal_mois: 768, trimestres_requis: 172}
+    categorie_active:     {age_legal_mois: 708, trimestres_requis: 172}
+
+# Catégorie active : services insalubres, dangereux (infirmiers, policiers, pompiers…)
+# Annulation décote automatique : 67 ans sédentaire, 62 ans actif
+age_annulation_decote_sedentaire_mois: 804
+age_annulation_decote_active_mois: 744

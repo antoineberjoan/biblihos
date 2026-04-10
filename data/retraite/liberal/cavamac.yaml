@@ -1,0 +1,33 @@
+nom: CAVAMAC
+organisme: Caisse d'Assurance Vieillesse des Agents Généraux d'Assurances et des Mandataires Non Salariés
+profession: agent-general-assurance
+sourceUrl: https://www.cavamac.fr/je-suis-en-activite/mes-cotisations-rbl/
+dateMiseAJour: "2026-04-10"
+pass: 48060  # PASS 2026
+
+rbl:
+  annee: 2026
+  t1:
+    taux: 0.0873
+    assiette_max: 48060   # 1 PASS
+    points_max: 557
+  t2:
+    taux: 0.0187
+    assiette_max: 240300  # 5 PASS
+    points_max: 25
+  minimum: 573
+  valeurPoint: 0.6540
+
+# RCO = Régime Complémentaire Obligatoire
+# Assiette = commissions brutes (différent du RBL)
+rc:
+  annee: 2026
+  type: taux
+  taux: 0.0045    # 0,45% sur commissions brutes
+  assiette_max: 48060  # plafond PASS
+  valeurPoint: 0.3994   # au 01/01/2024 (+4,3%) → +2,2% au 01/01/2025
+
+rid:
+  annee: 2026
+  cotisation: "—"   # données complètes en PDF 404
+  valeurPoint: "—"

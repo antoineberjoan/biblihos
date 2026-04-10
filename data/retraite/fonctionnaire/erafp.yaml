@@ -1,0 +1,39 @@
+nom: ERAFP
+organisme: Établissement de Retraite Additionnelle de la Fonction Publique
+profession: fonctionnaire  # tous fonctionnaires (FPE + CNRACL)
+sourceUrl: https://www.rafp.fr/connaitre/pilotage-technique-du-regime
+dateMiseAJour: "2026-04-10"
+
+# Régime en points, obligatoire pour tous les fonctionnaires
+# Assiette = primes et indemnités (hors traitement de base)
+type: complementaire
+
+cotisations:
+  annee: 2025
+  taux_salarie: 0.05    # 5%
+  taux_employeur: 0.05  # 5%
+  taux_total: 0.10
+  assiette_max_pct_traitement: 0.20  # plafonné à 20% du traitement indiciaire brut
+
+historique:
+  "2023":
+    valeurService: 0.05030
+    prixAchat: "—"
+    rendement: "—"
+  "2024":
+    valeurService: 0.05378
+    prixAchat: "—"
+    rendement: "—"
+  "2025":
+    valeurService: 0.05593
+    prixAchat: 1.4394
+    rendement: "—"
+  "2026":
+    valeurService: 0.05671
+    prixAchat: "—"
+    rendement: "—"
+
+revalorisation:
+  "2024": 0.068   # +6,8%
+  "2025": 0.040   # +4,0%
+  "2026": 0.014   # +1,4%

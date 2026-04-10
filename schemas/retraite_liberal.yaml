@@ -1,0 +1,119 @@
+# Biblihos — Schéma caisses retraite professions libérales (sections CNAVPL + assimilés)
+# Format : JSON Schema Draft 2020-12 en syntaxe YAML
+# Valide chaque fichier data/retraite/<caisse>.yaml
+
+$schema: https://json-schema.org/draft/2020-12/schema
+title: RetrateLiberale
+description: Paramètres d'une caisse de retraite de profession libérale
+type: object
+required:
+  - nom
+  - organisme
+  - profession
+  - sourceUrl
+  - dateMiseAJour
+  - pass
+  - rbl
+  - rid
+additionalProperties: true
+
+$defs:
+  NullableNumber:
+    oneOf:
+      - type: number
+      - const: "—"
+
+  Tranche:
+    type: object
+    required: [taux, assiette_max, points_max]
+    additionalProperties: true            # assiette_min et champs spécifiques acceptés
+    properties:
+      taux:
+        $ref: "#/$defs/NullableNumber"    # "—" pour tranches non applicables (CNBF)
+      assiette_max:
+        $ref: "#/$defs/NullableNumber"    # "—" pour tranches déplafonnées
+      points_max:
+        $ref: "#/$defs/NullableNumber"
+
+  ClasseRC:
+    type: object
+    required: [seuil_max, cotisation]
+    additionalProperties: true            # points, part_capitalisation, tranches selon caisse
+    properties:
+      seuil_max:
+        $ref: "#/$defs/NullableNumber"
+      cotisation:
+        $ref: "#/$defs/NullableNumber"   # "—" pour classes à taux progressifs (CNBF)
+
+properties:
+  nom:
+    type: string
+  organisme:
+    type: string
+  profession:
+    type: string
+  sourceUrl:
+    type: string
+  dateMiseAJour:
+    type: string
+    pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+  pass:
+    type: number
+    description: PASS de référence pour l'année des barèmes
+
+  # ── RBL — Régime de Base des Libéraux (commun CNAVPL) ────────────────
+  rbl:
+    type: object
+    required: [annee, t1, t2, minimum]
+    additionalProperties: true            # type, forfaits_anciennete, valeurPoint… selon caisse
+    properties:
+      annee:
+        type: integer
+      t1:
+        $ref: "#/$defs/Tranche"
+      t2:
+        $ref: "#/$defs/Tranche"
+      minimum:
+        type: number
+      valeurPoint:
+        type: number
+
+  # ── RC — Régime Complémentaire (structure variable) ──────────────────
+  rc:
+    type: object
+    required: [annee, type]
+    additionalProperties: true
+    properties:
+      annee:
+        type: integer
+      type:
+        enum: [classes, taux, forfait_proportionnel, tranches_taux]
+      valeurPoint:
+        $ref: "#/$defs/NullableNumber"
+      classes:
+        type: object
+        additionalProperties:
+          $ref: "#/$defs/ClasseRC"
+
+  # ── ASV — Avantage Social Vieillesse (conventionnés seulement) ────────
+  asv:
+    type: object
+    additionalProperties: true
+
+  # ── PCV — Prestations Complémentaires Vieillesse ─────────────────────
+  pcv:
+    type: object
+    additionalProperties: true
+
+  # ── RID — Régime Invalidité-Décès ─────────────────────────────────────
+  rid:
+    type: object
+    required: [annee, cotisation]
+    additionalProperties: true
+    properties:
+      annee:
+        type: integer
+      cotisation:
+        $ref: "#/$defs/NullableNumber"
+      valeurPoint:
+        $ref: "#/$defs/NullableNumber"

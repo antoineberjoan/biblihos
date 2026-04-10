@@ -1,0 +1,52 @@
+nom: CARMF
+organisme: Caisse Autonome de Retraite des Médecins de France
+profession: médecin
+sourceUrl: https://www.carmf.fr/page.php?page=chiffrescles%2Fstats%2F2025%2Ftaux2025.htm
+dateMiseAJour: "2026-04-10"
+pass: 47100  # PASS 2025
+
+rbl:
+  annee: 2025
+  t1:
+    taux: 0.0823
+    assiette_max: 47100  # 1 PASS
+    points_max: 525
+  t2:
+    taux: 0.0187
+    assiette_max: 235500  # 5 PASS
+    points_max: 25
+  minimum: 573
+  valeurPoint: 0.6540
+
+# RC = Régime Complémentaire Vieillesse (RCV)
+rc:
+  annee: 2025
+  type: taux
+  taux: 0.118
+  assiette_max: 164850  # 3.5 PASS
+  valeurPoint: 31.50
+  cotisation_max: 19449  # 11.8% × 164 850
+
+# ASV = Avantage Social Vieillesse (spécifique aux médecins conventionnés)
+# Les 2/3 de la part forfaitaire secteur 1 sont pris en charge par les caisses maladie
+asv:
+  secteur1:
+    forfait: 1852
+    taux_ajustement: 0.012667
+    assiette_max: 235500
+    part_cpam: 3704  # prise en charge CPAM (forfait × 2)
+  secteur2:
+    forfait: 5556
+    taux_ajustement: 0.038
+    assiette_max: 235500
+    part_cpam: 0
+
+rid:
+  annee: 2025
+  cotisation: "—"  # variable selon revenus
+  cotisation_min: 623   # revenus < 1 PASS
+  cotisation_max: 999   # revenus ≥ 3 PASS
+  part_forfait: 434
+  taux_proportionnel: 0.004
+  assiette_max: 141300  # 3 PASS
+  valeurPoint: 38.81

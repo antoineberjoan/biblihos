@@ -1,0 +1,49 @@
+nom: CNAVPL
+organisme: Caisse Nationale d'Assurance Vieillesse des Professions Libérales
+profession: profession-liberale  # chapeau commun à toutes les sections
+sourceUrl: https://www.cnavpl.fr/preparer-sa-retraite/
+dateMiseAJour: "2026-04-10"
+
+# RBL = Régime de Base des Libéraux — commun à toutes les sections CNAVPL
+# Seul régime de base français fonctionnant en points (hors RAFP)
+type: base_points
+
+pass: 48060  # PASS 2026
+
+# Taux courants (appliqués sur cotisations versées en 2026 sur revenus 2025)
+rbl:
+  annee: 2026
+  t1:
+    taux: 0.0873
+    assiette_max: 48060   # 1 PASS 2026
+    points_max: 557
+  t2:
+    taux: 0.0187
+    assiette_max: 240300  # 5 PASS 2026
+    points_max: 25
+  minimum: 573             # cotisation minimale (3 trimestres)
+  valeurPoint: 0.6599
+
+# Historique valeur de service du point RBL
+historique:
+  "2019": {valeurPoint: 0.5690}
+  "2023": {valeurPoint: 0.6076}
+  "2024": {valeurPoint: 0.6399}
+  "2025": {valeurPoint: 0.6540}
+  "2026": {valeurPoint: 0.6599}
+
+# Chapeau CNAVPL : pas de RID propre — chaque section gère son propre RID
+rid:
+  annee: 2026
+  cotisation: "—"
+
+# Sections de la CNAVPL (chacune a son propre fichier pour le RC/RID)
+sections:
+  - CARMF    # médecins
+  - CARPIMKO # paramédicaux (infirmiers, kiné, orthophonistes…)
+  - CAVEC    # experts-comptables
+  - CAVP     # pharmaciens
+  - CNBF     # avocats (régime spécifique, pas section CNAVPL stricto sensu)
+  - CARCDSF  # chirurgiens-dentistes + sages-femmes
+  - CAVAMAC  # agents généraux d'assurance
+  - CNAVPL_autres  # autres professions libérales sans section propre

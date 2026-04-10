@@ -1,0 +1,52 @@
+nom: CAVP
+organisme: Caisse d'Assurance Vieillesse des Pharmaciens
+profession: pharmacien
+sourceUrl: https://www.cavp.fr/votre-profil/pharmacien-en-activite/vos-cotisations-regime-vieillesse-base
+dateMiseAJour: "2026-04-10"
+pass: 47100  # PASS 2025
+
+rbl:
+  annee: 2025
+  t1:
+    taux: 0.0823
+    assiette_max: 47100   # 1 PASS
+    points_max: 525
+  t2:
+    taux: 0.0187
+    assiette_max: 235500  # 5 PASS
+    points_max: 25
+  minimum: 540
+  valeurPoint: 0.6540
+
+# RC = Régime Complémentaire par classes (répartition + capitalisation)
+# Classe déterminée par les revenus N-2
+# cotisation_reference 2025 = 1 423 €
+# part_repartition = 5 × cotisation_reference = 7 115 €
+rc:
+  annee: 2025
+  type: classes
+  cotisation_reference: 1423
+  part_repartition: 7115   # fixe pour toutes les classes (5 × référence)
+  valeurPoint: 1.0111       # revalorisation +2% au 01/01/2025
+  classes:
+    "3":  {seuil_max: 84042,  part_capitalisation: 2846,  cotisation: 9961}
+    "4":  {seuil_max: 101430, part_capitalisation: 4269,  cotisation: 11384}
+    "5":  {seuil_max: 118818, part_capitalisation: 5692,  cotisation: 12807}
+    "6":  {seuil_max: 136206, part_capitalisation: 7115,  cotisation: 14230}
+    "7":  {seuil_max: 153594, part_capitalisation: 8538,  cotisation: 15653}
+    "8":  {seuil_max: 170982, part_capitalisation: 9961,  cotisation: 17076}
+    "9":  {seuil_max: 188370, part_capitalisation: 11384, cotisation: 18499}
+    "10": {seuil_max: 205758, part_capitalisation: 12807, cotisation: 19922}
+    "11": {seuil_max: 223146, part_capitalisation: 14230, cotisation: 21345}
+    "12": {seuil_max: 240534, part_capitalisation: 15653, cotisation: 22768}
+    "13": {seuil_max: "—",   part_capitalisation: 17076, cotisation: 24191}
+  # Réductions possibles sur demande (revenus faibles)
+  reductions:
+    75: 15700   # -75% si revenus < 15 700 €
+    50: 31399   # -50% si revenus < 31 399 €
+    25: 47099   # -25% si revenus < 47 099 €
+
+rid:
+  annee: 2025
+  cotisation: 689
+  valeurPoint: "—"

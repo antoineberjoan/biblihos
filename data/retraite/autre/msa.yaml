@@ -1,0 +1,44 @@
+nom: MSA
+organisme: Mutualité Sociale Agricole
+profession: exploitant-agricole
+sourceUrl: https://www.msa.fr/lfp/en/exploitant/cotisations-et-contributions
+dateMiseAJour: "2026-04-10"
+pass: 47100  # PASS 2025
+
+# Retraite de base : annuités (25 meilleures années à partir de 2026)
+# Avant 2026 : mixte forfaitaire + proportionnel en points
+type: annuites
+
+cotisations:
+  annee: 2025
+  chef_principal:
+    retraite_base_plafonnee:    {taux: 0.1715, assiette_max: 47100}
+    retraite_base_deplafonnee:  {taux: 0.0072, assiette_max: "—"}
+    rco:                        {taux: 0.04,   assiette_min: 21476}  # min 1820 SMIC/an
+    rco_supplementaire:         {taux: "—"}    # 0-3% progressif
+  chef_secondaire:
+    retraite_base_plafonnee:    {taux: 0.1415, assiette_max: 47100}
+    retraite_base_deplafonnee:  {taux: 0.0072, assiette_max: "—"}
+
+minimum_retraite: 1200.26  # €/mois au 01/01/2025 (85% SMIC net agricole)
+
+# Mêmes règles générationnelles que CNAV pour l'âge légal
+generations:
+  - naissance: "1955-1957"
+    age_legal_mois: 744    # 62 ans
+    trimestres_requis: 166
+  - naissance: "1958-1960"
+    age_legal_mois: 744
+    trimestres_requis: 167
+  - naissance: "1961-1962"
+    age_legal_mois: 744
+    trimestres_requis: 168
+  - naissance: "1963-1964"
+    age_legal_mois: 756    # 63 ans
+    trimestres_requis: 170
+  - naissance: "1965"
+    age_legal_mois: 756
+    trimestres_requis: 171
+  - naissance: "1966+"
+    age_legal_mois: 768    # 64 ans
+    trimestres_requis: 172

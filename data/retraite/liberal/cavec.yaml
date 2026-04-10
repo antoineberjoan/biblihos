@@ -1,0 +1,63 @@
+nom: CAVEC
+organisme: Caisse d'Assurance Vieillesse des Experts-Comptables
+profession: expert-comptable
+sourceUrl: https://www.cavec.fr/votre-retraite/vos-cotisations/vos-cotisations-en-tant-que-liberal-tns/montant-de-vos-cotisations/vos-cotisations-retraite-prevoyance-et-options/
+dateMiseAJour: "2026-04-10"
+pass: 48060  # PASS 2026
+
+rbl:
+  annee: 2026
+  t1:
+    taux: 0.0873
+    assiette_max: 48060   # 1 PASS
+    points_max: 557
+  t2:
+    taux: 0.0187
+    assiette_max: 240300  # 5 PASS
+    points_max: 25
+  minimum: 573
+  valeurPoint: 0.6540
+
+# RC = Régime Complémentaire par classes
+# Classe déterminée par les revenus N-1
+rc:
+  annee: 2026
+  type: classes
+  valeurPoint: 1.3850
+  classes:
+    A: {seuil_max: 14919,  cotisation: 898,   points: 54}
+    B: {seuil_max: 31842,  cotisation: 3476,  points: 209}
+    C: {seuil_max: 44822,  cotisation: 5554,  points: 334}
+    D: {seuil_max: 65572,  cotisation: 8282,  points: 498}
+    E: {seuil_max: 81454,  cotisation: 12589, points: 757}
+    F: {seuil_max: 99946,  cotisation: 18260, points: 1098}
+    G: {seuil_max: 134854, cotisation: 20222, points: 1216}
+    H: {seuil_max: 181208, cotisation: 25627, points: 1541}
+    I: {seuil_max: "—",    cotisation: 30616, points: 1841}
+
+# Historique RC (valeur du point)
+historique:
+  "2025":
+    valeurPoint: 1.3710
+    classes:
+      A: {seuil_max: 16190,  cotisation: 782,   points: 48}
+      B: {seuil_max: 32350,  cotisation: 2934,  points: 180}
+      C: {seuil_max: 44790,  cotisation: 4629,  points: 284}
+      D: {seuil_max: 64560,  cotisation: 7237,  points: 444}
+      E: {seuil_max: 79040,  cotisation: 11540, points: 708}
+      F: {seuil_max: 94850,  cotisation: 17604, points: 1080}
+      G: {seuil_max: 132780, cotisation: 19560, points: 1200}
+      H: {seuil_max: "—",    cotisation: 24450, points: 1500}
+
+rid:
+  annee: 2026
+  cotisation: "—"  # inclus dans prévoyance
+  valeurPoint: "—"
+
+prevoyance:
+  annee: 2026
+  classes:
+    "1": {seuil_max: 14919,  cotisation: 288}
+    "2": {seuil_max: 44822,  cotisation: 396}
+    "3": {seuil_max: 81454,  cotisation: 612}
+    "4": {seuil_max: "—",    cotisation: 828}

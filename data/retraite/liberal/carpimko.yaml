@@ -1,0 +1,42 @@
+nom: CARPIMKO
+organisme: Caisse Autonome de Retraite et de Prévoyance des Infirmiers, Masseurs-Kinésithérapeutes, Pédicures-Podologues, Orthophonistes et Orthoptistes
+profession: paramédical
+sourceUrl: https://www.carpimko.com/je-suis-en-activite/mes-cotisations/mes-cotisations-sadaptent-a-mes-revenus
+dateMiseAJour: "2026-04-10"
+pass: 48060  # PASS 2026
+
+rbl:
+  annee: 2026
+  t1:
+    taux: 0.0873
+    assiette_max: 48060   # 1 PASS
+    points_max: 557
+  t2:
+    taux: 0.0187
+    assiette_max: 240300  # 5 PASS
+    points_max: 25
+  minimum: 573
+  valeurPoint: 0.6540
+
+# RC = Régime Complémentaire
+rc:
+  annee: 2026
+  type: forfait_proportionnel
+  taux_proportionnel: 0.087
+  assiette_min: 24030   # 0,5 PASS
+  assiette_max: 144180  # 3 PASS
+  valeurPoint: "—"      # à compléter
+
+# ASV = Avantage Social Vieillesse (paramédicaux conventionnés)
+# Financement : 1/3 affilié + 2/3 CPAM
+asv:
+  forfait_total: 671
+  part_affilie: 224
+  part_cpam: 447
+  taux_proportionnel: 0.004
+  assiette: "—"   # assiette conventionnée
+
+rid:
+  annee: 2026
+  cotisation: 1022
+  valeurPoint: "—"
